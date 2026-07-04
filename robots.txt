@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://wladislavius-tech.github.io/news-ukraine-mirror/sitemap.xml
