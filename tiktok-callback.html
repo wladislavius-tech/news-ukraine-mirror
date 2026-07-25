@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TikTok OAuth callback</title>
+<style>
+  body{font-family:system-ui,sans-serif;max-width:640px;margin:0 auto;padding:24px;
+       background:#111;color:#eee;line-height:1.6}
+  textarea{width:100%;font-size:1.1em;padding:10px;border-radius:8px;border:1px solid #444;
+       background:#1a1a1a;color:#eee;box-sizing:border-box}
+  .label{color:#888;font-size:.9em;margin-top:1.2em}
+</style>
+</head>
+<body>
+  <h1>TikTok авторизація</h1>
+  <p>Скопіюй значення нижче й передай для налаштування автопостингу.</p>
+  <div class="label">code</div>
+  <textarea id="code" rows="3" readonly></textarea>
+  <div class="label">error (якщо є)</div>
+  <textarea id="err" rows="2" readonly></textarea>
+<script>
+  const p = new URLSearchParams(location.search);
+  document.getElementById('code').value = p.get('code') || '(немає — перевір, чи авторизація пройшла)';
+  document.getElementById('err').value = (p.get('error') || '') + ' ' + (p.get('error_description') || '');
+</script>
+</body>
+</html>
