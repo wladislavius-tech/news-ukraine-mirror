@@ -29,7 +29,7 @@ MAX_ON_PAGE = 150
 MAX_IN_RSS = 30
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
-CHANNEL = "News_Ukraine_world_war"
+CHANNEL = "Suputnyk_news"  # ребрендинг 02.08.2026; старий username відключено
 SITE_URL = "https://wladislavius-tech.github.io/news-ukraine-mirror/"
 SITE_TITLE = "Новини України сьогодні — війна, події у світі"
 SITE_DESC = ("Оперативні новини України та світу: війна, обстріли, політика, "
