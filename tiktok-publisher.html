@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TikTok Content Tool — Українські новини</title>
+<meta name="description" content="Content publishing tool for TikTok creators. Sign in with TikTok to authorize video publishing via the Content Posting API.">
+<link rel="canonical" href="https://wladislavius-tech.github.io/news-ukraine-mirror/tiktok-publisher.html">
+<style>
+  body{font-family:system-ui,sans-serif;max-width:720px;margin:0 auto;padding:16px;
+       background:#111;color:#eee;line-height:1.6}
+  a{color:#6ab7ff}
+  h1{font-size:1.5em}
+  h2{font-size:1.1em;margin-top:1.6em}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:#fe2c55;color:#fff;
+       text-decoration:none;font-weight:600;padding:14px 26px;border-radius:8px;
+       font-size:1.05em;margin:18px 0}
+  .btn:hover{background:#e0264b}
+  .btn svg{width:20px;height:20px;fill:#fff}
+  .steps{background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:18px 22px;margin:1.4em 0}
+  .steps ol{margin:0;padding-left:1.2em}
+  .steps li{margin:.5em 0}
+  footer{color:#888;font-size:.85em;margin-top:2em;border-top:1px solid #333;padding-top:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>TikTok Content Tool</h1>
+  <p>Content publishing tool for TikTok creators. Sign in with TikTok (Login Kit) to authorize the app, then it publishes your video content to your TikTok profile via the Content Posting API.</p>
+</header>
+<main>
+  <a class="btn" id="tiktok-login" href="#">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg>
+    Sign in with TikTok
+  </a>
+
+  <div class="steps">
+    <h2>Як це працює</h2>
+    <ol>
+      <li>Натискаєте «Sign in with TikTok» — TikTok показує стандартний екран авторизації (Login Kit, scope <code>user.info.basic</code>).</li>
+      <li>Після підтвердження TikTok повертає код авторизації на наш <a href="tiktok-callback.html">callback</a>.</li>
+      <li>Застосунок обмінює код на токен доступу й публікує відео на авторизований акаунт через Content Posting API (<code>video.publish</code> / <code>video.upload</code>).</li>
+    </ol>
+  </div>
+
+  <h2>Про проєкт</h2>
+  <p>Цей інструмент розробила команда новинного проєкту <a href="https://t.me/News_Ukraine_world_war" rel="noopener">«Українські новини»</a> (<a href="./">сайт-дзеркало</a>) для публікації коротких новинних відео на TikTok.</p>
+
+  <p><a href="privacy.html">Політика конфіденційності</a> · <a href="terms.html">Умови використання</a></p>
+</main>
+<footer>
+  Останнє оновлення: 15.08.2026
+</footer>
+<script>
+  var redirect = encodeURIComponent('https://wladislavius-tech.github.io/news-ukraine-mirror/tiktok-callback.html');
+  var state = (crypto.randomUUID ? crypto.randomUUID() : String(Math.random())).replace(/-/g, '');
+  var clientKey = 'awxudpafwkpobeye';
+  var scope = 'user.info.basic,video.publish,video.upload';
+  document.getElementById('tiktok-login').href =
+    'https://www.tiktok.com/v2/auth/authorize/?client_key=' + clientKey +
+    '&scope=' + scope + '&response_type=code&redirect_uri=' + redirect + '&state=' + state;
+</script>
+</body>
+</html>
