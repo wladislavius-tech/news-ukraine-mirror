@@ -3,13 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Політика конфіденційності — Українські новини</title>
+<title>Ukrainian News Publisher</title>
 <meta name="description" content="Політика конфіденційності проєкту «Українські новини»: сайт-дзеркало, Telegram-канал та інтеграції автопублікації (Threads, TikTok).">
 <link rel="canonical" href="https://wladislavius-tech.github.io/news-ukraine-mirror/privacy.html">
+<link rel="icon" type="image/jpeg" href="app-icon.jpg">
 <style>
   body{font-family:system-ui,sans-serif;max-width:720px;margin:0 auto;padding:16px;
        background:#111;color:#eee;line-height:1.6}
   a{color:#6ab7ff}
+  .brand{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .brand img{width:40px;height:40px;border-radius:50%}
+  .brand span{font-weight:700;font-size:1.1em}
   h1{font-size:1.4em}
   h2{font-size:1.1em;margin-top:1.6em}
   footer{color:#888;font-size:.85em;margin-top:2em;border-top:1px solid #333;padding-top:12px}
@@ -17,6 +21,7 @@
 </head>
 <body>
 <header>
+  <div class="brand"><img src="app-icon.jpg" alt="Ukrainian News Publisher"><span>Ukrainian News Publisher</span></div>
   <h1>Політика конфіденційності</h1>
   <p>Проєкт «Українські новини» — Telegram-канал <a href="https://t.me/News_Ukraine_world_war" rel="noopener">@News_Ukraine_world_war</a>, це сайт-дзеркало та пов'язані інтеграції автопублікації (Threads, TikTok).</p>
 </header>
@@ -34,11 +39,20 @@
   <h2>Використання Threads API</h2>
   <p>Аналогічно — застосунок публікує контент лише на Threads-акаунт, авторизований через OAuth, без доступу до даних інших користувачів.</p>
 
+  <h2>Зберігання та захист даних</h2>
+  <p>Токени доступу та інші секрети зберігаються виключно в захищеному сховищі GitHub Actions Secrets (шифрування на боці GitHub, доступ лише під час виконання автоматизованих завдань проєкту). Дані не передаються, не продаються і не надаються третім особам. Ми не зберігаємо персональні дані відвідувачів сайту, оскільки сайт їх не збирає.</p>
+
+  <h2>Права користувачів</h2>
+  <p>Користувач, який авторизував застосунок через TikTok або Threads, може в будь-який момент відкликати доступ у налаштуваннях свого акаунта відповідної платформи (TikTok: Settings → Security → Connected apps; Threads/Meta: Accounts Center → Apps and websites). Після відкликання застосунок втрачає доступ до акаунта негайно.</p>
+
+  <h2>Зміни до цієї політики</h2>
+  <p>Ми можемо оновлювати цю політику конфіденційності; дата останнього оновлення вказана внизу сторінки. Суттєві зміни повідомляються через Telegram-канал проєкту.</p>
+
   <h2>Контакт</h2>
   <p>Питання щодо цієї політики — через <a href="https://t.me/News_Ukraine_world_war" rel="noopener">Telegram-канал</a>.</p>
 </main>
 <footer>
-  Останнє оновлення: 15.08.2026
+  Останнє оновлення: 18.09.2026
 </footer>
 </body>
 </html>
